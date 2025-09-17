@@ -1,0 +1,117 @@
+/* Custom styles for any minor adjustments or for elements not easily handled by Tailwind */
+
+:root {
+  --color-primary: #017f52;
+  --color-primary-dark: #015c3d; /* A calculated darker shade for hovers/active states */
+  --font-heading: 'Urbanist', sans-serif;
+  --font-body: 'Nexus Sans Pro', 'Inter', sans-serif; /* Nexus Sans Pro with Inter as a fallback */
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6, .font-bold {
+  font-family: var(--font-heading);
+  font-weight: 600; /* Corresponds to SemiBold */
+}
+
+/* Style for the active navigation tab */
+.nav-tab.active {
+    background-color: var(--color-primary-dark);
+}
+.nav-tab.active svg {
+    filter: brightness(0) invert(1); /* Makes the SVG icon white */
+}
+
+/* Define the animation keyframes */
+@keyframes slide-from-right {
+  from { transform: translateX(100px); opacity: 0; }
+}
+
+@keyframes slide-to-left {
+  to { transform: translateX(-100px); opacity: 0; }
+}
+
+/*
+  The ::view-transition-old is a "screenshot" of the old page.
+  We tell it to play the 'slide-to-left' animation as it disappears.
+*/
+::view-transition-old(root) {
+  animation: 0.3s ease-out both slide-to-left;
+}
+
+/*
+  The ::view-transition-new is a "screenshot" of the new page.
+  We tell it to play the 'slide-from-right' animation as it appears.
+*/
+::view-transition-new(root) {
+  animation: 0.3s ease-in both slide-from-right;
+}
+
+.content-wrapper {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.content-wrapper.loaded {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ==============================================
+  NEW: Horizontal Tab Styles
+==============================================
+*/
+
+.horizontal-scroll-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  
+  /* NEW: Add scroll snapping for a better touch experience */
+  scroll-snap-type: x mandatory;
+
+  /* NEW: Change the cursor to indicate it's draggable */
+  cursor: grab;
+}
+
+/* NEW: Style for when the user is actively dragging */
+.horizontal-scroll-container.grabbing {
+    cursor: grabbing;
+}
+
+/* Hide the default scrollbar for a cleaner look */
+.horizontal-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+.horizontal-scroll-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Styling for each tab item */
+.tab-item {
+  flex: 0 0 auto;
+  padding: 1.5rem;
+  margin-right: 1rem;
+  width: 280px;
+  border-radius: 0.5rem;
+  background-color: #f9fafb;
+  border: 1px solid #f3f4f6;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  
+  /* NEW: Define where each item should snap to */
+  scroll-snap-align: start;
+}
+
+
+/* Styling for the active (green) tab item */
+.tab-item.active-tab {
+  background-color: var(--color-primary);
+  color: white;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
