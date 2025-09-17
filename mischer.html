@@ -20,7 +20,7 @@
 
         <div id="header-placeholder"></div>
 
-        <main class="px-8 md:px-12 py-10 flex-1">
+        <main class="py-10 flex-1">
 
             <section class="text-center py-4">
                 <h1 id="main-headline" class="text-5xl md:text-[60px] font-bold text-gray-800">Mischer XY von Fa. Z</h1>
@@ -29,7 +29,7 @@
                 </p>
             </section>
 
-            <section class="relative mb-16">
+            <section class="px-8 md:px-12 relative mb-16 shadow-md z-10">
                 <img src="./assets/images/factory.jpg" alt="Industrial machinery" class="w-full h-auto rounded-lg shadow-lg">
                 
                 <button class="hotspot absolute flex items-center justify-center w-10 h-10 bg-[var(--color-primary)] text-white rounded-full text-lg font-bold shadow-md" style="top: 40%; left: 10%;" data-title="Lorem ipsum 24px" data-text="Dies ist die Beschreibung für Punkt 1. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.">
@@ -51,117 +51,159 @@
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy 20px
                     </p>
                 </div>
+                <div class="pt-8 pb-6">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center">Headline (Abschnittstitel) 28 - 36px</h2>
+                    <p class="mt-4 mb-12 max-w-2xl mx-auto text-lg text-center">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 24px
+                    </p>                    
+                </div>
+
             </section>
 
-<!--             <section class="py-4">
-                 <h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center">Headline (Abschnittstitel) 28 - 36px</h2>
-                 <p class="text-gray-600 mt-4 mb-12 max-w-2xl mx-auto text-lg text-center">
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 24px
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-100">
-                        <div class="flex justify-between items-center mb-3">
-                            <h4 class="font-bold text-xl">Lorem ipsum 24px</h4>
-                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            <section>
+                <div class=" pb-4 px-8">
+
+                   <!--  <div class="relative">
+                        <button id="scroll-left-btn" class="scroll-btn left-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+                        </button> -->
+
+
+                    <div id="tab-container" class="horizontal-scroll-container md:px-12 ">
+                        <div class="tab-item active-tab bg-gray-50 p-6 rounded-lg shadow-md border border-gray-100" data-tab="feature1">
+                            <div class="flex justify-between items-center mb-3">
+                                <h4 class="font-bold text-xl">Content box 1</h4>
+                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            </div>
+                            <p class="text-gray-600">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 24px</p>
                         </div>
-                        <p class="text-gray-600">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy 20px</p>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-100">
-                        <div class="flex justify-between items-center mb-3">
-                            <h4 class="font-bold text-xl">Lorem ipsum</h4>
-                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        <div class="tab-item bg-gray-50 p-6 rounded-lg shadow-md border border-gray-100" data-tab="feature2">
+                            <div class="flex justify-between items-center mb-3">
+                                <h4 class="font-bold text-xl">Content box 2</h4>
+                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            </div>
+                            <p class="text-gray-600">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 24px</p>
                         </div>
-                        <p class="text-gray-600">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy invidunt ut labore et.</p>
-                    </div>
-                    <div class="bg-[var(--color-primary)] text-white p-6 rounded-lg shadow-md">
-                        <div class="flex justify-between items-center mb-3">
-                            <h4 class="font-bold text-xl">Lorem ipsum</h4>
-                             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        <div class="tab-item bg-gray-50 p-6 rounded-lg shadow-md border border-gray-100" data-tab="feature3">
+                            <div class="flex justify-between items-center mb-3">
+                                <h4 class="font-bold text-xl">Content box 3</h4>
+                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            </div>
+                            <p class="text-gray-600">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 24px</p>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy invidunt ut labore et.</p>
+                        <div class="tab-item bg-gray-50 p-6 rounded-lg shadow-md border border-gray-100" data-tab="feature4">
+                            <div class="flex justify-between items-center mb-3">
+                                <h4 class="font-bold text-xl">Content box 4</h4>
+                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            </div>
+                            <p class="text-gray-600">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 24px</p>
+                        </div>
                     </div>
+
+                     <!-- Right Scroll Button -->
+                        <!-- <button id="scroll-right-btn" class="scroll-btn right-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+                        </button>
+                    </div> -->
+
+
                 </div>
-            </section> -->
-
-            <section class="py-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center">Feature Details</h2>
-                <p class="text-gray-600 mt-4 mb-8 max-w-2xl mx-auto text-lg text-center">
-                    Select a feature below to learn more.
-                </p>
-
-                <div id="tab-container" class="horizontal-scroll-container pb-4">
-                    <div class="tab-item active-tab" data-tab="feature1">
-                        <h4 class="font-bold text-xl">Core Module</h4>
-                        <p>Details about the main component of the machine.</p>
-                    </div>
-                    <div class="tab-item" data-tab="feature2">
-                        <h4 class="font-bold text-xl">Control Panel</h4>
-                        <p>Information about the user interface and controls.</p>
-                    </div>
-                    <div class="tab-item" data-tab="feature3">
-                        <h4 class="font-bold text-xl">Safety Systems</h4>
-                        <p>An overview of the built-in safety features.</p>
-                    </div>
-                    <div class="tab-item" data-tab="feature4">
-                        <h4 class="font-bold text-xl">Material Input</h4>
-                        <p>How raw materials are fed into the system.</p>
-                    </div>
-                    <div class="tab-item" data-tab="feature5">
-                        <h4 class="font-bold text-xl">Output & Collection</h4>
-                        <p>Details on the final product collection process.</p>
-                    </div>
-                    </div>
 
                 <div id="tab-content-container" class="mt-8">
+                   
                     <div class="tab-content" data-tab="feature1">
-                        <div class="bg-gray-50 p-6 rounded-lg">
-                            <h3 class="font-bold text-2xl mb-4">Core Module In-Depth</h3>
-                            <p>This is the detailed description for the Core Module. It includes specifications, performance metrics, and maintenance information. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-                        </div>
+                        <section class="bg-[var(--color-primary)] text-white py-10 px-8 md:px-12">
+                            <div class="max-w-7xl mx-auto">
+                                <h2 class="text-3xl md:text-4xl font-bold text-center">Content box 1</h2>
+                                <p class="mt-4 mb-12 max-w-2xl mx-auto text-lg text-center">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 24px
+                                </p>
+                                <div class="relative max-w-4xl mx-auto cursor-pointer">
+                                    <div id="open-video-modal" class="relative bg-black rounded-lg shadow-md cursor-pointer group">
+                                            <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop" alt="Video Thumbnail" class="w-full h-72 object-cover rounded-lg opacity-80 group-hover:opacity-60 transition-opacity">
+                                            <div class="absolute inset-0 flex items-center justify-center">
+                                                <div class="w-16 h-16 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/50 transition-colors">
+                                                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                <p class="text-center mt-4 text-gray-200">Lorem ipsum dolor eirmod tempor, sed diam nonumy eirmod tempor.</p>
+                            </div>
+                        </section>
                     </div>
+
                     <div class="tab-content hidden" data-tab="feature2">
-                         <div class="bg-gray-50 p-6 rounded-lg">
-                            <h3 class="font-bold text-2xl mb-4">Understanding the Control Panel</h3>
-                            <p>Our intuitive control panel allows for easy operation. This section provides a guide to all buttons and readouts. Sed diam nonumy eirmod tempor invidunt ut labore et dolore.</p>
-                        </div>
+                        <section class="bg-[var(--color-primary)] text-white py-10 px-8 md:px-12">
+                            <div class="max-w-7xl mx-auto">
+                                <h2 class="text-3xl md:text-4xl font-bold text-center">Content box 2</h2>
+                                <p class="mt-4 mb-12 max-w-2xl mx-auto text-lg text-center">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 24px
+                                </p>
+                                <div class="relative max-w-4xl mx-auto cursor-pointer">
+                                    <div id="open-video-modal" class="relative bg-black rounded-lg shadow-md cursor-pointer group">
+                                            <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop" alt="Video Thumbnail" class="w-full h-72 object-cover rounded-lg opacity-80 group-hover:opacity-60 transition-opacity">
+                                            <div class="absolute inset-0 flex items-center justify-center">
+                                                <div class="w-16 h-16 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/50 transition-colors">
+                                                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                <p class="text-center mt-4 text-gray-200">Lorem ipsum dolor eirmod tempor, sed diam nonumy eirmod tempor.</p>
+                            </div>
+                        </section>
                     </div>
+
                     <div class="tab-content hidden" data-tab="feature3">
-                        <div class="bg-gray-50 p-6 rounded-lg text-center">
-                            <h3 class="font-bold text-2xl mb-4">Video: Safety Systems in Action</h3>
-                            <div id="open-video-modal" class="relative bg-black rounded-lg shadow-md cursor-pointer group w-full h-48 max-w-2xl mx-auto">
-                                <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop" alt="Video Thumbnail" class="w-full h-full object-cover rounded-lg opacity-80 group-hover:opacity-60 transition-opacity">
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                    <div class="w-16 h-16 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/50 transition-colors">
-                                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
-                                    </div>
+                        <section class="bg-[var(--color-primary)] text-white py-10 px-8 md:px-12">
+                            <div class="max-w-7xl mx-auto">
+                                <h2 class="text-3xl md:text-4xl font-bold text-center">Content box 3</h2>
+                                <p class="mt-4 mb-12 max-w-2xl mx-auto text-lg text-center">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 24px
+                                </p>
+                                <div class="relative max-w-4xl mx-auto cursor-pointer">
+                                    <div id="open-video-modal" class="relative bg-black rounded-lg shadow-md cursor-pointer group">
+                                            <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop" alt="Video Thumbnail" class="w-full h-72 object-cover rounded-lg opacity-80 group-hover:opacity-60 transition-opacity">
+                                            <div class="absolute inset-0 flex items-center justify-center">
+                                                <div class="w-16 h-16 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/50 transition-colors">
+                                                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                                </div>
+                                            </div>
+                                        </div>
                                 </div>
+                                <p class="text-center mt-4 text-gray-200">Lorem ipsum dolor eirmod tempor, sed diam nonumy eirmod tempor.</p>
                             </div>
-                        </div>
+                        </section>
                     </div>
-                    </div>
-            </section>
 
-        </main>
-
-<!--         <section class="bg-[var(--color-primary)] text-white py-10 px-8 md:px-12">
-            <div class="max-w-7xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center">Headline (Abschnittstitel) 28 - 36px</h2>
-                <p class="mt-4 mb-12 max-w-2xl mx-auto text-lg text-center">
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 24px
-                </p>
-                <div class="relative max-w-4xl mx-auto cursor-pointer">
-                    <div id="open-video-modal" class="relative bg-black rounded-lg shadow-md cursor-pointer group">
-                            <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop" alt="Video Thumbnail" class="w-full h-72 object-cover rounded-lg opacity-80 group-hover:opacity-60 transition-opacity">
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div class="w-16 h-16 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/50 transition-colors">
-                                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                    <div class="tab-content hidden" data-tab="feature4">
+                        <section class="bg-[var(--color-primary)] text-white py-10 px-8 md:px-12">
+                            <div class="max-w-7xl mx-auto">
+                                <h2 class="text-3xl md:text-4xl font-bold text-center">Content box 4</h2>
+                                <p class="mt-4 mb-12 max-w-2xl mx-auto text-lg text-center">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 24px
+                                </p>
+                                <div class="relative max-w-4xl mx-auto cursor-pointer">
+                                    <div id="open-video-modal" class="relative bg-black rounded-lg shadow-md cursor-pointer group">
+                                            <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop" alt="Video Thumbnail" class="w-full h-72 object-cover rounded-lg opacity-80 group-hover:opacity-60 transition-opacity">
+                                            <div class="absolute inset-0 flex items-center justify-center">
+                                                <div class="w-16 h-16 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/50 transition-colors">
+                                                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                                </div>
+                                            </div>
+                                        </div>
                                 </div>
+                                <p class="text-center mt-4 text-gray-200">Lorem ipsum dolor eirmod tempor, sed diam nonumy eirmod tempor.</p>
                             </div>
-                        </div>
+                        </section>
+                    </div>
+
+                    <!-- Add more tab-content sections for feature3, feature4, etc. following the same structure -->
+
                 </div>
-                <p class="text-center mt-4 text-gray-200">Lorem ipsum dolor eirmod tempor, sed diam nonumy eirmod tempor.</p>
-            </div>
-        </section> -->
+            </section>
+        </main>
         
         <div id="footer-placeholder"></div>
 
@@ -252,6 +294,34 @@
 
             
             // --- NEW: Drag-to-Scroll Functionality ---
+
+            const tabs = document.querySelectorAll('.tab-item');
+            const contentPanels = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Get the target tab's data attribute
+                    const targetTab = tab.dataset.tab;
+
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active-tab'));
+                    // Add active class to the clicked tab
+                    tab.classList.add('active-tab');
+
+                    // Hide all content panels
+                    contentPanels.forEach(panel => {
+                        panel.classList.add('hidden');
+                    });
+
+                    // Show the corresponding content panel
+                    const targetPanel = document.querySelector(`.tab-content[data-tab="${targetTab}"]`);
+                    if (targetPanel) {
+                        targetPanel.classList.remove('hidden');
+                    }
+                });
+            });
+
+
             const scrollContainer = document.getElementById('tab-container');
 
             if (scrollContainer) {
@@ -284,7 +354,43 @@
                     scrollContainer.scrollLeft = scrollLeft - walk;
                 });
             }
-           
+
+
+            // --- NEW: Scroll Button Functionality ---
+            // // const scrollContainer = document.getElementById('tab-container');
+            // const leftBtn = document.getElementById('scroll-left-btn');
+            // const rightBtn = document.getElementById('scroll-right-btn');
+            // // const tabs = document.querySelectorAll('.tab-item');
+
+            // if (scrollContainer && leftBtn && rightBtn && tabs.length > 0) {
+            //     // Calculate the distance to scroll based on the width of one tab + its margin
+            //     const scrollAmount = tabs[0].offsetWidth + parseInt(getComputedStyle(tabs[0]).marginRight);
+
+            //     const updateButtonState = () => {
+            //         // Hide left button if at the start
+            //         leftBtn.classList.toggle('hidden', scrollContainer.scrollLeft <= 0);
+            //         // Hide right button if at the end
+            //         const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+            //         rightBtn.classList.toggle('hidden', scrollContainer.scrollLeft >= maxScrollLeft - 1); // -1 for precision
+            //     };
+
+            //     leftBtn.addEventListener('click', () => {
+            //         scrollContainer.scrollLeft -= scrollAmount;
+            //     });
+
+            //     rightBtn.addEventListener('click', () => {
+            //         scrollContainer.scrollLeft += scrollAmount;
+            //     });
+
+            //     scrollContainer.addEventListener('scroll', updateButtonState);
+
+            //     // Initial check when the page loads
+            //     updateButtonState();
+                
+            //     // Also check when the window resizes
+            //     new ResizeObserver(updateButtonState).observe(scrollContainer);
+            // }
+
         });
     </script>
 
