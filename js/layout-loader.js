@@ -23,9 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
             setActiveNav();
 
             // Finally, reveal the content with a smooth fade-in
-            if (contentWrapper) {
-                contentWrapper.classList.add('loaded');
-            }
+            if (contentWrapper) contentWrapper.classList.add('loaded');
         })
         .catch(error => {
             console.error("Error loading layout partials:", error);
@@ -36,23 +34,50 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 });
 
+
 function setActiveNav() {
-    // This function finds the current page's filename (e.g., "mischer.html")
+    // --- Configuration ---
+    const visibleIcons = 5; 
+
+    const navContainer = document.getElementById('nav-scroll-container');
+    const navViewport = document.getElementById('nav-viewport');
+    if (!navContainer || !navViewport) return;
+
+    const navLinks = Array.from(navContainer.querySelectorAll('.nav-tab'));
+    if (navLinks.length === 0) return;
+
+    // --- 1. Find the active link ---
     const currentPage = window.location.pathname.split('/').pop();
-    if (!currentPage) return;
-
-    const navLinks = document.querySelectorAll('.nav-tab');
+    let activeLink = navLinks.find(link => link.getAttribute('href').split('/').pop() === currentPage) || navLinks[0];
+    activeLink.classList.add('active');
     
-    navLinks.forEach(link => {
-        // Remove active class from all links first
-        link.classList.remove('active');
+    // --- 2. Set viewport width using reliable hardcoded values ---
+    const iconWidth = 48;
+    const gapWidth = 12;
+    
+    const totalViewportWidth = (visibleIcons * iconWidth) + ((visibleIcons - 1) * gapWidth);
+    navViewport.style.width = `${totalViewportWidth}px`;
 
-        // Get the filename the link points to
-        const linkPage = link.getAttribute('href').split('/').pop();
+    // --- 3. Defer measurement and scrolling until the browser is ready to paint ---
+    requestAnimationFrame(() => {
+        const viewportWidth = navViewport.clientWidth;
+        const linkOffsetLeft = activeLink.offsetLeft;
+        
+        // Ideal position: center of link at center of viewport
+        let targetScrollLeft = (linkOffsetLeft + iconWidth / 2) - (viewportWidth / 2);
 
-        // If it matches the current page, add the 'active' class
-        if (linkPage === currentPage) {
-            link.classList.add('active');
-        }
+        // Clamp the value to stay within scrollable bounds
+        const maxScrollLeft = navContainer.scrollWidth - viewportWidth;
+        targetScrollLeft = Math.max(0, targetScrollLeft);
+        targetScrollLeft = Math.min(maxScrollLeft, targetScrollLeft);
+
+        // Apply the scroll instantly on load
+        navContainer.scrollTo({
+            left: targetScrollLeft,
+            behavior: 'auto' 
+        });
+
+        // Reveal the container now that it's correctly sized and positioned
+        navViewport.classList.add('loaded');
     });
 }

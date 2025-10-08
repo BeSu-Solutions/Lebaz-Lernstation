@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
+    
+    <title>Die Lernfabrik</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Urbanist:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/mystyle.css" />
+
+</head>
+<body class="bg-white">
+
+    <div class="max-w-7xl mx-auto content-wrapper flex flex-col min-h-screen">
+
+        <div id="header-placeholder"></div>
+
+        <main class="py-10 flex-1">
+
+            <section class="text-center py-4">
+                <h1 id="main-headline" class="text-5xl md:text-[60px] font-bold text-gray-800">Mischer XY von Fa. Z</h1>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 24px
+                </p>
+            </section>
+
+            <section class="px-8 md:px-12 relative mb-16 shadow-md z-10">
+                <img src="./assets/images/factory.jpg" alt="Industrial machinery" class="w-full h-auto rounded-lg shadow-lg">
+                
+                <button class="hotspot absolute flex items-center justify-center w-10 h-10 bg-[var(--color-primary)] text-white rounded-full text-lg font-bold shadow-md" style="top: 40%; left: 10%;" data-title="Lorem ipsum 24px" data-text="Dies ist die Beschreibung für Punkt 1. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.">
+                    01
+                </button>
+                <button class="hotspot absolute flex items-center justify-center w-10 h-10 bg-[var(--color-primary)] text-white rounded-full text-lg font-bold shadow-md" style="top: 55%; left: 45%;" data-title="Ein zweiter Punkt" data-text="Hier ist eine andere Beschreibung für Punkt 2. Consetetur sadipscing elitr, sed diam nonumy.">
+                    02
+                </button>
+                <button class="hotspot absolute flex items-center justify-center w-10 h-10 bg-[var(--color-primary)] text-white rounded-full text-lg font-bold shadow-md" style="top: 50%; left: 75%;" data-title="Letzter Hotspot" data-text="Und die finale Beschreibung für den dritten Punkt. Sed diam nonumy eirmod tempor invidunt ut labore.">
+                    03
+                </button>
+
+                <div id="popup" class="hidden absolute top-1/4 left-1/4 w-72 bg-white p-4 rounded-lg shadow-2xl border border-gray-200">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 id="popup-title" class="font-bold text-lg">Lorem ipsum 24px</h3>
+                        <button id="close-popup" class="text-gray-500 hover:text-gray-800">&times;</button>
+                    </div>
+                    <p id="popup-text" class="text-gray-600 text-sm">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy 20px
+                    </p>
+                </div>
+                <div class="pt-8 pb-6">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center">Headline (Abschnittstitel) 28 - 36px</h2>
+                    <p class="mt-4 mb-12 max-w-2xl mx-auto text-lg text-center">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 24px
+                    </p>                    
+                </div>
+
+            </section>
+
+            <section>
+                <div class=" pb-4 px-8">
+
+                   <!--  <div class="relative">
+                        <button id="scroll-left-btn" class="scroll-btn left-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+                        </button> -->
+
+
+                    <div id="tab-container" class="horizontal-scroll-container md:px-12 ">
+                        <div class="tab-item active-tab bg-gray-50 p-6 rounded-lg shadow-md border border-gray-100" data-tab="feature1">
+                            <div class="flex justify-between items-center mb-3">
+                                <h4 class="font-bold text-xl">Content box 1</h4>
+                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            </div>
+                            <p class="text-gray-600">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 24px</p>
+                        </div>
+                        <div class="tab-item bg-gray-50 p-6 rounded-lg shadow-md border border-gray-100" data-tab="feature2">
+                            <div class="flex justify-between items-center mb-3">
+                                <h4 class="font-bold text-xl">Content box 2</h4>
+                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            </div>
+                            <p class="text-gray-600">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 24px</p>
+                        </div>
+                        <div class="tab-item bg-gray-50 p-6 rounded-lg shadow-md border border-gray-100" data-tab="feature3">
+                            <div class="flex justify-between items-center mb-3">
+                                <h4 class="font-bold text-xl">Content box 3</h4>
+                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            </div>
+                            <p class="text-gray-600">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 24px</p>
+                        </div>
+                        <div class="tab-item bg-gray-50 p-6 rounded-lg shadow-md border border-gray-100" data-tab="feature4">
+                            <div class="flex justify-between items-center mb-3">
+                                <h4 class="font-bold text-xl">Content box 4</h4>
+                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            </div>
+                            <p class="text-gray-600">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 24px</p>
+                        </div>
+                    </div>
+
+                     <!-- Right Scroll Button -->
+                        <!-- <button id="scroll-right-btn" class="scroll-btn right-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+                        </button>
+                    </div> -->
+
+
+                </div>
+
+                <div id="tab-content-container" class="mt-8">
+                   
+                    <div class="tab-content" data-tab="feature1">
+                        <section class="bg-[var(--color-primary)] text-white py-10 px-8 md:px-12">
+                            <div class="max-w-7xl mx-auto">
+                                <h2 class="text-3xl md:text-4xl font-bold text-center">Content box 1</h2>
+                                <p class="mt-4 mb-12 max-w-2xl mx-auto text-lg text-center">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 24px
+                                </p>
+                                <div class="relative max-w-4xl mx-auto cursor-pointer">
+                                    <div id="open-video-modal" class="relative bg-black rounded-lg shadow-md cursor-pointer group">
+                                            <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop" alt="Video Thumbnail" class="w-full h-72 object-cover rounded-lg opacity-80 group-hover:opacity-60 transition-opacity">
+                                            <div class="absolute inset-0 flex items-center justify-center">
+                                                <div class="w-16 h-16 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/50 transition-colors">
+                                                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                <p class="text-center mt-4 text-gray-200">Lorem ipsum dolor eirmod tempor, sed diam nonumy eirmod tempor.</p>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="tab-content hidden" data-tab="feature2">
+                        <section class="bg-[var(--color-primary)] text-white py-10 px-8 md:px-12">
+                            <div class="max-w-7xl mx-auto">
+                                <h2 class="text-3xl md:text-4xl font-bold text-center">Content box 2</h2>
+                                <p class="mt-4 mb-12 max-w-2xl mx-auto text-lg text-center">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 24px
+                                </p>
+                                <div class="relative max-w-4xl mx-auto cursor-pointer">
+                                    <div id="open-video-modal" class="relative bg-black rounded-lg shadow-md cursor-pointer group">
+                                            <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop" alt="Video Thumbnail" class="w-full h-72 object-cover rounded-lg opacity-80 group-hover:opacity-60 transition-opacity">
+                                            <div class="absolute inset-0 flex items-center justify-center">
+                                                <div class="w-16 h-16 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/50 transition-colors">
+                                                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                <p class="text-center mt-4 text-gray-200">Lorem ipsum dolor eirmod tempor, sed diam nonumy eirmod tempor.</p>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="tab-content hidden" data-tab="feature3">
+                        <section class="bg-[var(--color-primary)] text-white py-10 px-8 md:px-12">
+                            <div class="max-w-7xl mx-auto">
+                                <h2 class="text-3xl md:text-4xl font-bold text-center">Content box 3</h2>
+                                <p class="mt-4 mb-12 max-w-2xl mx-auto text-lg text-center">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 24px
+                                </p>
+                                <div class="relative max-w-4xl mx-auto cursor-pointer">
+                                    <div id="open-video-modal" class="relative bg-black rounded-lg shadow-md cursor-pointer group">
+                                            <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop" alt="Video Thumbnail" class="w-full h-72 object-cover rounded-lg opacity-80 group-hover:opacity-60 transition-opacity">
+                                            <div class="absolute inset-0 flex items-center justify-center">
+                                                <div class="w-16 h-16 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/50 transition-colors">
+                                                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                <p class="text-center mt-4 text-gray-200">Lorem ipsum dolor eirmod tempor, sed diam nonumy eirmod tempor.</p>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="tab-content hidden" data-tab="feature4">
+                        <section class="bg-[var(--color-primary)] text-white py-10 px-8 md:px-12">
+                            <div class="max-w-7xl mx-auto">
+                                <h2 class="text-3xl md:text-4xl font-bold text-center">Content box 4</h2>
+                                <p class="mt-4 mb-12 max-w-2xl mx-auto text-lg text-center">
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna 24px
+                                </p>
+                                <div class="relative max-w-4xl mx-auto cursor-pointer">
+                                    <div id="open-video-modal" class="relative bg-black rounded-lg shadow-md cursor-pointer group">
+                                            <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop" alt="Video Thumbnail" class="w-full h-72 object-cover rounded-lg opacity-80 group-hover:opacity-60 transition-opacity">
+                                            <div class="absolute inset-0 flex items-center justify-center">
+                                                <div class="w-16 h-16 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/50 transition-colors">
+                                                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                <p class="text-center mt-4 text-gray-200">Lorem ipsum dolor eirmod tempor, sed diam nonumy eirmod tempor.</p>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Add more tab-content sections for feature3, feature4, etc. following the same structure -->
+
+                </div>
+            </section>
+        </main>
+        
+        <div id="footer-placeholder"></div>
+
+    </div>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
+        <div class="bg-black p-2 rounded-lg shadow-xl w-full max-w-4xl relative">
+            <button id="close-video-modal" class="absolute -top-10 right-0 text-white text-3xl font-bold">&times;</button>
+            <video id="video-player" class="w-full h-auto" controls>
+                <!-- <source src="./assets/videos/Videosequenz_Demonstrator.mp4" type="video/mp4"> -->
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <script src="./js/layout-loader.js"></script>
+    <!-- <script src="./js/content-tab-navigation.js"></script> -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {        
+
+            // --- Image Hotspot and Popup Logic ---
+            const hotspots = document.querySelectorAll('.hotspot');
+            const popup = document.getElementById('popup');
+            const closePopupButton = document.getElementById('close-popup');
+            const popupTitle = document.getElementById('popup-title');
+            const popupText = document.getElementById('popup-text');
+
+            hotspots.forEach(hotspot => {
+                hotspot.addEventListener('click', function() {
+                    // Get data from the clicked hotspot
+                    const title = this.dataset.title;
+                    const text = this.dataset.text;
+                    
+                    // Update the popup's content
+                    popupTitle.textContent = title;
+                    popupText.textContent = text;
+                    
+                    // Position and show the popup near the hotspot
+                    const rect = this.getBoundingClientRect();
+                    const containerRect = this.parentElement.getBoundingClientRect();
+
+                    // Calculate position relative to the container
+                    let top = rect.top - containerRect.top + rect.height + 10;
+                    let left = rect.left - containerRect.left;
+
+                    popup.style.top = `${top}px`;
+                    popup.style.left = `${left}px`;
+                    
+                    popup.classList.remove('hidden');
+                });
+            });
+
+            // Add event listener to the close button
+            closePopupButton.addEventListener('click', function() {
+                popup.classList.add('hidden');
+            });
+
+
+            // --- Existing Video Modal Logic ---
+            const videoModal = document.getElementById('video-modal');
+            const openModalButton = document.getElementById('open-video-modal');
+            const closeModalButton = document.getElementById('close-video-modal');
+            const videoPlayer = document.getElementById('video-player');
+            const videoSrc = './assets/videos/Videosequenz_Demonstrator.mp4'; 
+
+            openModalButton.addEventListener('click', () => {
+                videoPlayer.src = videoSrc;
+                videoPlayer.load();
+                // if (videoPlayer.getAttribute('src') !== videoSrc) {
+                //     videoPlayer.setAttribute('src', videoSrc);
+                // }
+                videoModal.classList.remove('hidden');
+                videoPlayer.play();
+            });
+
+            const closeModal = () => {
+                videoModal.classList.add('hidden');
+                videoPlayer.pause();
+                videoPlayer.currentTime = 0;
+            };
+
+            closeModalButton.addEventListener('click', closeModal);
+            videoModal.addEventListener('click', (event) => {
+                if (event.target === videoModal) closeModal();
+            });
+
+            
+            // --- NEW: Drag-to-Scroll Functionality ---
+
+            const tabs = document.querySelectorAll('.tab-item');
+            const contentPanels = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Get the target tab's data attribute
+                    const targetTab = tab.dataset.tab;
+
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active-tab'));
+                    // Add active class to the clicked tab
+                    tab.classList.add('active-tab');
+
+                    // Hide all content panels
+                    contentPanels.forEach(panel => {
+                        panel.classList.add('hidden');
+                    });
+
+                    // Show the corresponding content panel
+                    const targetPanel = document.querySelector(`.tab-content[data-tab="${targetTab}"]`);
+                    if (targetPanel) {
+                        targetPanel.classList.remove('hidden');
+                    }
+                });
+            });
+
+
+            const scrollContainer = document.getElementById('tab-container');
+
+            if (scrollContainer) {
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+
+                scrollContainer.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    scrollContainer.classList.add('grabbing');
+                    startX = e.pageX - scrollContainer.offsetLeft;
+                    scrollLeft = scrollContainer.scrollLeft;
+                });
+
+                scrollContainer.addEventListener('mouseleave', () => {
+                    isDown = false;
+                    scrollContainer.classList.remove('grabbing');
+                });
+
+                scrollContainer.addEventListener('mouseup', () => {
+                    isDown = false;
+                    scrollContainer.classList.remove('grabbing');
+                });
+
+                scrollContainer.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - scrollContainer.offsetLeft;
+                    const walk = (x - startX) * 2; // The multiplier makes scrolling faster
+                    scrollContainer.scrollLeft = scrollLeft - walk;
+                });
+            }
+
+
+            // --- NEW: Scroll Button Functionality ---
+            // // const scrollContainer = document.getElementById('tab-container');
+            // const leftBtn = document.getElementById('scroll-left-btn');
+            // const rightBtn = document.getElementById('scroll-right-btn');
+            // // const tabs = document.querySelectorAll('.tab-item');
+
+            // if (scrollContainer && leftBtn && rightBtn && tabs.length > 0) {
+            //     // Calculate the distance to scroll based on the width of one tab + its margin
+            //     const scrollAmount = tabs[0].offsetWidth + parseInt(getComputedStyle(tabs[0]).marginRight);
+
+            //     const updateButtonState = () => {
+            //         // Hide left button if at the start
+            //         leftBtn.classList.toggle('hidden', scrollContainer.scrollLeft <= 0);
+            //         // Hide right button if at the end
+            //         const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+            //         rightBtn.classList.toggle('hidden', scrollContainer.scrollLeft >= maxScrollLeft - 1); // -1 for precision
+            //     };
+
+            //     leftBtn.addEventListener('click', () => {
+            //         scrollContainer.scrollLeft -= scrollAmount;
+            //     });
+
+            //     rightBtn.addEventListener('click', () => {
+            //         scrollContainer.scrollLeft += scrollAmount;
+            //     });
+
+            //     scrollContainer.addEventListener('scroll', updateButtonState);
+
+            //     // Initial check when the page loads
+            //     updateButtonState();
+                
+            //     // Also check when the window resizes
+            //     new ResizeObserver(updateButtonState).observe(scrollContainer);
+            // }
+
+        });
+    </script>
+
+</body>
+</html>

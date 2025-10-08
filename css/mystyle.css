@@ -115,3 +115,63 @@ h1, h2, h3, h4, h5, h6, .font-bold {
   transform: translateY(-4px);
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
+
+/* This targets the <p> tag inside the active tab and makes its text white */
+.tab-item.active-tab p {
+  color: white;
+}
+
+/* This targets the <svg> icon inside the active tab and makes it white */
+.tab-item.active-tab svg {
+  color: white;
+}
+
+/* ==============================================
+  Scroll Navigation Buttons
+==============================================
+*/
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;  /* 48px */
+  height: 3rem; /* 48px */
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #374151; /* text-gray-700 */
+  border-radius: 9999px; /* rounded-full */
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out, background-color 0.2s;
+}
+
+.scroll-btn:hover {
+    background-color: white;
+}
+
+.scroll-btn.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ==============================================
+  Scrolling Header Navigation
+==============================================
+*/
+.scrolling-nav-viewport {
+  overflow: hidden; /* This hides the parts of the nav that are off-screen */
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.scrolling-nav-viewport.loaded {
+    opacity: 1; /* NEW: Show when JS is ready */
+}
+
+.scrolling-nav-viewport nav {
+  /* This ensures the inner container doesn't shrink its items */
+  display: flex; 
+}
