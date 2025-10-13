@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Die Lernfabrik - Willkommen</title>
+
+    <!-- Google Fonts (Urbanist for headings, Inter for body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Urbanist:wght@600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Your Custom Stylesheet (for fonts, colors, etc.) -->
+    <link rel="stylesheet" href="./assets/css/custom.css">
+    
+    <style>
+        /* A little extra style to ensure the spinner is the brand color */
+        .loader-spinner {
+            border-top-color: var(--color-primary);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Main container is now the positioning anchor for the background -->
+    <div class="relative min-h-screen">
+
+        <!-- ============================================== -->
+        <!-- Background Image & Overlay Layer (z-index 0)   -->
+        <!-- ============================================== -->
+        <div class="absolute inset-0 z-0">
+            <!-- The decorative image now fills this container -->
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./assets/images/deco_image2.png');"></div>
+            <!-- A semi-transparent overlay to ensure text is readable -->
+            <div class="absolute inset-0 bg-black/60"></div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- Foreground Content Layer (z-index 10)        -->
+        <!-- ============================================== -->
+        <div class="relative z-10 flex flex-col h-screen">
+            <!-- Main Content Area -->
+            <main class="flex-1 flex flex-col items-center justify-center text-center p-8">
+
+                <!-- Logo -->
+                <img src="./assets/images/Lernfabrik_Logo.png" alt="Die Lernfabrik Logo" class="h-20 w-auto mb-10">
+
+                <!-- Main Headline (Text color changed to white) -->
+                <h1 class="text-5xl font-bold text-white">
+                    Mechanical Treatment
+                </h1>
+
+                <!-- Subtitle (Text color changed to light gray) -->
+                <p class="mt-4 text-lg text-gray-300 max-w-md">
+                    Ihre interaktive Lernumgebung für industrielle Prozesse.
+                </p>
+
+                <!-- Status Indicator -->
+                <div class="mt-12 flex items-center justify-center space-x-4 text-gray-300">
+                    <div class="loader-spinner w-8 h-8 border-4 border-gray-500 border-solid rounded-full animate-spin"></div>
+                    <span class="text-lg">Place an object to start the learn station</span>
+                </div>
+
+            </main>
+
+            <!-- Footer -->
+            <footer class="w-full py-6 text-center">
+                <img src="./assets/images/Lernfabrik_Logo_minimal.png" alt="Die Lernfabrik Logo" class="h-10 w-auto mx-auto">
+            </footer>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
