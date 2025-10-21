@@ -18,10 +18,10 @@ h1, h2, h3, h4, h5, h6, .font-bold {
 
 /* Style for the active navigation tab */
 .nav-tab.active {
-    background-color: var(--color-primary-dark);
-}
-.nav-tab.active svg {
-    filter: brightness(0) invert(1); /* Makes the SVG icon white */
+    /* Styles for the <a> tag when active */
+    /* Example: Add a subtle shadow or slightly different scale */
+     transform: scale(1.2); /* Optional: make the whole link area slightly larger */
+     /* box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); Optional shadow */
 }
 
 /* Define the animation keyframes */
@@ -162,13 +162,13 @@ h1, h2, h3, h4, h5, h6, .font-bold {
 ==============================================
 */
 .scrolling-nav-viewport {
-  overflow: hidden; /* This hides the parts of the nav that are off-screen */
+  /*overflow: hidden;*/
   transition: opacity 0.3s ease-in-out;
   opacity: 0;
 }
 
 .scrolling-nav-viewport.loaded {
-    opacity: 1; /* NEW: Show when JS is ready */
+    opacity: 1;
 }
 
 .scrolling-nav-viewport nav {
