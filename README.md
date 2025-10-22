@@ -85,7 +85,7 @@ This acts as the landing page for the website. It's located in the main project 
     1.  Place your new image in the `/assets/images/` folder.
     2.  In `index.html`, update the `url()` in this line:
     ```html
-    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/images/deco_image.png');"></div>
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./assets/images/deco_image.png');"></div>
     ```
 
 -   **To change the loading status text:**
@@ -127,9 +127,9 @@ Each content section (like `oprt`, `envr`) has its own header file that controls
     4.  Update the `src` (initially gray), `data-inactive-src` (gray path), `data-active-src` (color path), and `alt` attributes of the `<img>` tag inside it.
     ```html
     <a href="/pages/oprt/oprt-002.html" class="nav-tab ...">
-        <img src="/assets/icons/oprt_002_gray.png" 
-             data-inactive-src="/assets/icons/oprt_002_gray.png" 
-             data-active-src="/assets/icons/oprt_002_green.png" 
+        <img src="../../assets/icons/oprt_002_gray.png" 
+             data-inactive-src="../../assets/icons/oprt_002_gray.png" 
+             data-active-src="../../assets/icons/oprt_002_green.png" 
              alt="Step 2" 
              class="w-12 h-12 ...">
     </a>
@@ -142,9 +142,9 @@ Each content section (like `oprt`, `envr`) has its own header file that controls
     4.  Update the `src` attribute to point to the **color** icon. The `data-inactive-src` and `data-active-src` attributes are **still required** by the script but should **both** point to the **color** icon path. Update the `alt` text.
     ```html
     <a href="/pages/oprt/oprt-002.html" class="nav-tab ...">
-        <img src="/assets/icons/oprt_002_green.png" 
-             data-inactive-src="/assets/icons/oprt_002_green.png" {/* Points to color icon */}
-             data-active-src="/assets/icons/oprt_002_green.png" {/* Points to color icon */}
+        <img src="../../assets/icons/oprt_002_green.png" 
+             data-inactive-src="../../assets/icons/oprt_002_green.png" {/* Points to color icon */}
+             data-active-src="../../assets/icons/oprt_002_green.png" {/* Points to color icon */}
              alt="Step 2" 
              class="w-12 h-12 ...">
     </a>
@@ -202,7 +202,7 @@ This is the template for your main content pages (the ones with the interactive 
     2.  Find the `<div>` with the class `open-video-modal-trigger` inside the correct tab's content block.
     3.  Update the `data-video-src` path to point to your new video file.
     ```html
-    <div class="open-video-modal-trigger ..." data-video-src="/assets/videos/new_video_for_this_tab.mp4">
+    <div class="open-video-modal-trigger ..." data-video-src="../../assets/videos/new_video_for_this_tab.mp4">
         <img src="..." alt="New Video Thumbnail Description" ...> {/* Optional: Update thumbnail image/alt text */}
     </div>
     ```
@@ -218,13 +218,13 @@ Creating a new page within an existing section (like "Operations") is straightfo
     -   Make a copy of an existing file like `oprt-001.html`.
 
 2.  **Rename the New File:**
-    -   Rename the copy using lowercase letters and hyphens (e.g., `oprt-new-process.html`).
+    -   Rename the copy using lowercase letters and hyphens (e.g., `oprt-008.html`).
 
 3.  **Link the Correct Header:**
     -   Open the new file. At the top, find the `<div id="header-placeholder">`.
-    -   Ensure the `data-header-src` path points to the correct header for this section (e.g., `/pages/oprt/oprt_header.html`). This should already be correct if you duplicated a file from the same folder.
+    -   Ensure the `data-header-src` path points to the correct header for this section (e.g., `./oprt_header.html`). This should already be correct if you duplicated a file from the same folder.
     ```html
-    <div id="header-placeholder" data-header-src="/pages/oprt/oprt_header.html"></div>
+    <div id="header-placeholder" data-header-src="./oprt_header.html"></div>
     ```
 
 4.  **Update All Content:**
@@ -233,7 +233,7 @@ Creating a new page within an existing section (like "Operations") is straightfo
 5.  **Add Link in Header:**
     -   Open the relevant header file (e.g., `/pages/oprt/oprt_header.html`).
     -   Decide where the new step fits in the sequence.
-    -   Add a new `<a>...</a>` block for the icon, making sure the `href` points to your new file name (e.g., `href="/pages/oprt/oprt-new-process.html"`). Ensure you have the corresponding icon images ready in `/assets/icons/`.
+    -   Add a new `<a>...</a>` block for the icon, making sure the `href` points to your new file name (e.g., `href="./oprt-008.html"`). Ensure you have the corresponding icon images ready in `/assets/icons/`.
 
 
 ---
@@ -242,12 +242,18 @@ Creating a new page within an existing section (like "Operations") is straightfo
 
 This website is designed to be navigated partly via external triggers, like placing an object with an NFC tag on the station. When configuring these triggers:
 
--   The URL should point to the specific content page you want to launch.
--   Use **root-relative paths** starting with `/` to ensure the link works reliably.
--   **Example:** To start the "Operations" process at step 1, the NFC tag should trigger the URL: `/pages/oprt/oprt-001.html`. To start at step 3, it would trigger `/pages/oprt/oprt-003.html`.
--   The landing pages in the `/pages/vrtl/` folder can also be triggered if you want to show a general intro screen for a machine before the user proceeds to a specific step. For example: `/pages/vrtl/vrtl-001.html`.
+-   The URL programmed into the NFC tag should point to the **specific content page** you want to launch.
+-   It is **highly recommended** to use the **full, absolute URL** for the page. This ensures the link works reliably regardless of how the NFC system reads or accesses the web.
+-   **Example URLs:**
+    * To start the "Operations" process at step 1 on the testing site, the NFC tag should be programmed with:
+        `https://besu-solutions.github.io/Lebaz-Lernstation/pages/oprt/oprt-001.html`
+    * To start the "Operations" process at step 3:
+        `https://besu-solutions.github.io/Lebaz-Lernstation/pages/oprt/oprt-003.html`
+    * To show the landing page for the "Operations" virtual machine (if needed):
+        `https://besu-solutions.github.io/Lebaz-Lernstation/pages/vrtl/vrtl-001.html` *(Adjust `vrtl-001.html` if it corresponds to the specific machine)*
+-   **When deploying to your own server:** Remember to replace the `https://besu-solutions.github.io/Lebaz-Lernstation/` part of the URL with your actual domain and path.
 
-Following the consistent naming convention is crucial for these triggers to function reliably.
+Following the consistent file naming convention (`[section]-XXX.html`) and using the correct **full URL** is crucial for these triggers to function reliably.
 
 ---
 
