@@ -158,7 +158,7 @@ Each content section (like `oprt`, `envr`) has its own header file that controls
 
 ---
 
-### 4.4. Main Content Pages (e.g., `/pages/oprt/oprt-mt.html`)
+### 4.4. Main Content Pages (e.g., `/pages/oprt/oprt-001.html`)
 
 This is the template for your main content pages (the ones with the interactive elements). All pages within a section (like `/oprt/`) will follow this structure.
 
@@ -215,7 +215,7 @@ Creating a new page within an existing section (like "Operations") is straightfo
 
 1.  **Duplicate an Existing Page:**
     -   Go to the folder where you want the new page (e.g., `/pages/oprt/`).
-    -   Make a copy of an existing file like `oprt-mt.html`.
+    -   Make a copy of an existing file like `oprt-001.html`.
 
 2.  **Rename the New File:**
     -   Rename the copy using lowercase letters and hyphens (e.g., `oprt-new-process.html`).
