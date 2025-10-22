@@ -1,4 +1,4 @@
-# Website Content Management Guide
+# Managing and Updating Lernstation Content
 
 Welcome to the documentation for the Virtual Learn Station website. This guide is designed for non-developers and will walk you through how to update text, images, and videos, as well as how to create new pages.
 
@@ -6,16 +6,15 @@ Welcome to the documentation for the Virtual Learn Station website. This guide i
 
 The project is organized into a few key folders. Understanding what each one does will help you find the files you need to edit.
 
--   **/assets/**: This is where all your media files are stored.
-    -   **/assets/images/**: Contains all standard images, like logos and background photos.
-    -   **/assets/icons/**: Contains the green and gray navigation icons for the header.
-    -   **/assets/videos/**: Contains all video files used in the modals.
+-   **/assets/**: This is where all your media files are stored (images, icons, videos).
 -   **/css/**: Contains the main stylesheet (`custom.css`). You **won't need to edit** this file for content changes.
 -   **/js/**: Contains the JavaScript files that add interactivity. You **won't need to edit** these files.
--   **/pages/**: This is the **most important** folder. It contains the website's pages and reusable parts.
-    -   **/pages/oprt/**: Contains all pages related to the "Operations" section, including its specific header (`oprt_header.html`).
-    -   **/pages/envr/**: (Example) A place for a future "Environment" section with its own pages and header.
-    -   `_footer.html`: The **shared footer** file used on all pages.
+-   **/pages/**: This is the **most important** folder. It contains the website's pages and reusable parts, organized by section.
+    -   **/pages/vrtl/**: Contains the **landing pages** for each individual virtual machine (e.g., `vrtl-001.html`, `vrtl-002.html`). These pages are the entry points for a specific process.
+    -   **/pages/oprt/**: Contains the **step-by-step content pages** for the "Operations" virtual station (`oprt-001.html`, `oprt-002.html`, etc.) and its specific navigation header (`oprt_header.html`).
+    -   **/pages/envr/**: (Example) Contains the content pages and header for a future "Environment" virtual station.
+    -   `_footer.html`: The **shared footer** file used on all content pages.
+-   `index.html`: The main **overall landing page** for the entire application (located in the top-level project folder).
 
 ---
 
@@ -23,9 +22,9 @@ The project is organized into a few key folders. Understanding what each one doe
 
 The website is built from reusable parts (like the header) and individual pages that use them.
 
-### 2.1. The Landing Page (`index.html`)
+### 2.1. The Landing Page for the Website (`index.html`)
 
-This is the first page users see. It's located in the main project folder (the top level).
+This acts as the landing page for the website. It's located in the main project folder (the top level). It is not neccesary to show this page to the users, but if you need a generic page to represent the learn station as a whole then this is where you can do that. The design for this has currently been decided. We can discuss it if needed. You can make temporary changes as below.
 
 -   **To change the main headline and subtitle:**
     Open `index.html` and edit the text inside these tags:
@@ -53,18 +52,34 @@ This is the first page users see. It's located in the main project folder (the t
 
 ---
 
-### 2.2. The Header & Navigation (`/pages/oprt/oprt_header.html`)
+### 2.2. Landing Pages for virtual machines (e.g., `/pages/vrtl/vrtl-001.html`)
+
+Theser are the placeholder pages for the landing page for the virtual machines. The design is still in discussion and not final yet.
+
+    - vrtl-001.html = Mechanical Treatment
+    - vrtl-002.html = Partikelvorbehandlung
+    - vrtl-003.html = Laserkonvektionierung
+    - vrtl-004.html = TGA / Trockenraum
+
+**To change content:** Open the relevant file (e.g., `vrtl-001.html`) and edit the HTML text and image paths directly. You can customize the design and content of these pages as needed.
+
+
+---
+
+### 2.3. The Header & Navigation (`/pages/oprt/oprt_header.html`)
 
 This file controls the circular navigation bar for all pages within the `/pages/oprt/` folder.
 
 -   **To change an icon:**
-    1.  Place your new **color** icon (e.g., `new_icon_color.png`) and **gray** icon (e.g., `new_icon_gray.png`) in the `/assets/icons/` folder.
-    2.  In `oprt_header.html`, find the link you want to change and update the `src`, `data-inactive-src`, and `data-active-src` paths. Remember to also update the `alt` text.
+    1.  Place your new **green** icon (e.g., `mixer_icon_green.png`) and **gray** icon (e.g., `mixer_icon_gray.png`) in the `/assets/icons/` folder.
+    2.  Open the relevant header file (e.g., `oprt_header.html`).
+    3.  Find the `<a>` tag for the step you want to change.
+    4.  Update the `src`, `data-inactive-src`, `data-active-src`, and `alt` attributes of the `<img>` tag inside it.
     ```html
-    <a href="/pages/oprt/oprt-step2.html" class="nav-tab ...">
-        <img src="/assets/icons/icon2_gray.png" 
-             data-inactive-src="/assets/icons/icon2_gray.png" 
-             data-active-src="/assets/icons/icon2_green.png" 
+    <a href="/pages/oprt/oprt-002.html" class="nav-tab ...">
+        <img src="/assets/icons/oprt_002_gray.png" 
+             data-inactive-src="/assets/icons/oprt_002_gray.png" 
+             data-active-src="/assets/icons/oprt_002_green.png" 
              alt="Step 2" 
              class="w-12 h-12 ...">
     </a>
@@ -81,14 +96,9 @@ This file controls the circular navigation bar for all pages within the `/pages/
 -   **To add or remove a step in the navigation:**
     Simply copy and paste (or delete) an entire `<a>...</a>` block within the `<nav>` tags. The JavaScript will automatically handle the circular logic. Make sure to update the `href` and image paths for any new link.
 
--   **To create a header for a new section (e.g., "Environment"):**
-    1.  Duplicate the `oprt_header.html` file.
-    2.  Rename it (e.g., `envr_header.html`) and place it in the new folder (e.g., `/pages/envr/`).
-    3.  Edit this new file to include the links and icons specific to the "Environment" section.
-
 ---
 
-### 2.3. Main Content Pages (e.g., `/pages/oprt/oprt-mt.html`)
+### 2.4. Main Content Pages (e.g., `/pages/oprt/oprt-mt.html`)
 
 This is the template for your main content pages (the ones with the interactive elements). All pages within a section (like `/oprt/`) will follow this structure.
 
@@ -101,7 +111,7 @@ This is the template for your main content pages (the ones with the interactive 
 -   **To change the main image with hotspots:**
     1.  Place your new image in `/assets/images/`.
     2.  Update the `src` attribute in the `<img src="./assets/images/factory.jpg" ...>` tag.
-    3.  *Note: The hotspot positions (`top`, `left` percentages in the `style` attribute) may need to be adjusted by a developer if the image layout or dimensions change significantly.*
+    3.  *Note: The hotspot positions (`top`, `left` percentages in the `style` attribute) will need to be adjusted to match the correct location.*
 
 -   **To change hotspot information:**
     Find the `<button class="hotspot"...>` you want to edit and change the `data-title` (for the popup title) and `data-text` (for the popup description) attributes.
@@ -165,4 +175,38 @@ Creating a new page within an existing section (like "Operations") is straightfo
     -   Decide where the new step fits in the sequence.
     -   Add a new `<a>...</a>` block for the icon, making sure the `href` points to your new file name (e.g., `href="/pages/oprt/oprt-new-process.html"`). Ensure you have the corresponding icon images ready in `/assets/icons/`.
 
-By following these steps, you can easily manage the content of the website without needing to touch the more complex JavaScript code.
+
+---
+
+## 4. Note on NFC Trigger Integration
+
+This website is designed to be navigated partly via external triggers, like placing an object with an NFC tag on the station. When configuring these triggers:
+
+-   The URL should point to the specific content page you want to launch.
+-   Use **root-relative paths** starting with `/` to ensure the link works reliably.
+-   **Example:** To start the "Operations" process at step 1, the NFC tag should trigger the URL: `/pages/oprt/oprt-001.html`. To start at step 3, it would trigger `/pages/oprt/oprt-003.html`.
+-   The landing pages in the `/pages/vrtl/` folder can also be triggered if you want to show a general intro screen for a machine before the user proceeds to a specific step. For example: `/pages/vrtl/vrtl-001.html`.
+
+Following the consistent naming convention is crucial for these triggers to function reliably.
+
+---
+
+## 5. Project Workflow & Branches (GitHub)
+
+This project uses **GitHub** to manage different versions of the website. Understanding the branches is important for knowing where to make changes and how they become live.
+
+-   **`development` Branch:**
+    * This is the main branch for **making changes** and adding new content.
+    * Work done on this branch should be tested locally on your computer.
+    * To test, you can run a simple local web server. Open a terminal or command prompt in the project's main folder and run: `python -m http.server`. Then, open your web browser to `http://localhost:8000`.
+-   **`testing` Branch:**
+    * This branch is connected to **GitHub Pages**. Any changes pushed to this branch will automatically be **deployed** to the live testing website.
+    * **Only push changes here when they are ready for review and testing by others.**
+-   **`production` Branch:**
+    * *(Currently unused)* This branch will eventually hold the final, stable version of the website for the public.
+
+**Basic Workflow:**
+1.  Make all your content edits (text, images, videos, new pages) on the `development` branch.
+2.  Test your changes locally using the Python server method.
+3.  When ready for wider testing, merge the `development` branch into the `testing` branch.
+4.  GitHub Pages will automatically update the testing website within a few minutes.

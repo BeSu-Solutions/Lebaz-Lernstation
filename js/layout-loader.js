@@ -98,7 +98,7 @@ function setActiveNav() {
     const navContainer = document.getElementById('nav-scroll-container');
     const navViewport = document.getElementById('nav-viewport');
     if (!navContainer || !navViewport) {
-        // Silently return if elements aren't ready/present yet
+        // Return if elements aren't ready/present yet
         return;
     }
 
