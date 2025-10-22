@@ -30,19 +30,32 @@ This project uses **GitHub** to manage different versions of the website. Unders
 
 ---
 
-## 2. Getting the Project Code
+## 2. Getting and Working with the Project Code
 
-You can get a copy of the website's code from the GitHub repository in two ways:
+There are different ways to get the website's code, depending on how you plan to use it:
 
--   **Cloning (Recommended for Development):**
-    * Use a Git client (like GitHub Desktop or the command line) to "clone" the repository.
-    * This creates a local copy that is linked to the online repository, allowing you to easily pull updates and push your changes.
-    * This is the best method if you plan to regularly contribute changes.
--   **Downloading (For Backup or Deployment):**
+-   **Downloading (For Backup, Simple Viewing, or Independent Work):**
     * On the main page of the GitHub repository, click the green "<> Code" button.
-    * Select "Download ZIP".
-    * This downloads a snapshot of the current branch as a ZIP file.
-    * This is useful for creating backups or if you need to deploy the website files to a different web server (not GitHub Pages).
+    * Select "Download ZIP". 
+    * This downloads a snapshot of the current branch as a ZIP file. Unzip this file on your computer.
+    * **Use this method if:** You need a backup copy, want to view the files offline, need to deploy the files manually to a different web server, or want to work on the code **independently without using GitHub/Git for version control**.
+    * **Local Testing:** You can still run the downloaded website locally. Open a terminal/command prompt in the unzipped project folder and run `python -m http.server`, then visit `http://localhost:8000`.
+    * **Drawback:** You cannot easily contribute changes back to the original GitHub repository or receive updates using this method.
+
+-   **Forking (For Independent Development on GitHub or Contributing Back):**
+    1.  Click the "Fork" button on the top right of the GitHub repository page. This creates a complete copy of the repository under **your own GitHub account**.
+    2.  "Clone" **your fork** to your local computer using a Git client (like GitHub Desktop or the command line).
+    3.  Make changes, commit them, and "Push" them back up **to your fork**.
+    4.  *(Optional)* If you want to suggest your changes be added to the original `besu-solutions/Lebaz-Lernstation` repository, you can create a "Pull Request" from your fork.
+    * **Use this method if:** You want to maintain your own version of the project on GitHub or propose changes back to the original repository.
+
+-   **Cloning as a Collaborator (Direct Development - Requires Access):**
+    1.  **Request Access:** Please provide your GitHub username so we can add you as a collaborator.
+    2.  Once added, you can "Clone" the *original* `besu-solutions/Lebaz-Lernstation` repository directly to your local computer.
+    3.  Make changes on specific branches (usually **not** directly on `development` or `testing`), commit them, and "Push" them back to the original repository.
+    * **Use this method if:** You want to keep the existing reository and work as a collaborator with us and need to push changes directly (usually via branches and pull requests within the main repository).
+
+**In summary:** For simply updating content within the existing structure as part of the team, **we strongly recommend requesting collaborator access** and using that workflow. It's the easiest way to ensure everyone is working from the same codebase and changes can be managed effectively. If you plan to make significant independent changes *while still using GitHub*, **forking** is the better approach. **Downloading** is best for backups or working completely outside the GitHub ecosystem.
 
 ---
 
