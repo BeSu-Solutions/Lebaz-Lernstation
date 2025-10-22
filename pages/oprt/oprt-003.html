@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="view-transition" content="same-origin">
 
+    <script>
+        fetch('/js/config.js')
+            .then(response => response.text())
+            .then(configText => {
+                (new Function(configText))(); 
+                const baseTag = document.createElement('base');
+                baseTag.href = BASE_PATH || '/'; // Use '/' as a fallback
+                document.head.prepend(baseTag);
+            })
+            .catch(err => console.error('Error loading config for base tag:', err));
+    </script>
+
     <title>Virtual Machine - Mechanical Treatment</title>
     
     <script src="https://cdn.tailwindcss.com"></script>

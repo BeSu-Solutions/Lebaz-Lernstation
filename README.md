@@ -112,13 +112,19 @@ Theser are the placeholder pages for the landing page for the virtual machines. 
 
 ### 4.3. The Header & Navigation (`/pages/oprt/oprt_header.html`)
 
-This file controls the circular navigation bar for all pages within the `/pages/oprt/` folder.
+Each content section (like `oprt`, `envr`) has its own header file that controls the circular navigation for that section's numbered pages.
 
--   **To change an icon:**
-    1.  Place your new **green** icon (e.g., `mixer_icon_green.png`) and **gray** icon (e.g., `mixer_icon_gray.png`) in the `/assets/icons/` folder.
+-   **Icon Styling Method:**
+    * Currently, the website uses a **CSS grayscale filter** to automatically make the inactive icons gray. You only need to provide the **color** version of each icon.
+    * If you prefer to use **separate gray image files** for the inactive state, you can switch the method:
+        1.  Open the `/js/config.js` file.
+        2.  Change the line `const USE_GRAYSCALE_FILTER = true;` to `const USE_GRAYSCALE_FILTER = false;`.
+
+-   **To change an icon (using separate gray/green files when `USE_GRAYSCALE_FILTER` is `false`):**
+    1.  Place your new **color** (active) icon and **gray** (inactive) icon PNGs in `/assets/icons/`.
     2.  Open the relevant header file (e.g., `oprt_header.html`).
     3.  Find the `<a>` tag for the step you want to change.
-    4.  Update the `src`, `data-inactive-src`, `data-active-src`, and `alt` attributes of the `<img>` tag inside it.
+    4.  Update the `src` (initially gray), `data-inactive-src` (gray path), `data-active-src` (color path), and `alt` attributes of the `<img>` tag inside it.
     ```html
     <a href="/pages/oprt/oprt-002.html" class="nav-tab ...">
         <img src="/assets/icons/oprt_002_gray.png" 
@@ -129,16 +135,26 @@ This file controls the circular navigation bar for all pages within the `/pages/
     </a>
     ```
 
--   **To change which page an icon links to:**
-    Update the `href` attribute in the `<a>` tag:
+-   **To change an icon (using grayscale filter when `USE_GRAYSCALE_FILTER` is `true`):**
+    1.  Place your new **color** icon PNG in `/assets/icons/`.
+    2.  Open the relevant header file (e.g., `oprt_header.html`).
+    3.  Find the `<a>` tag for the step you want to change.
+    4.  Update the `src` attribute to point to the **color** icon. The `data-inactive-src` and `data-active-src` attributes are **still required** by the script but should **both** point to the **color** icon path. Update the `alt` text.
     ```html
-    <a href="/pages/oprt/your-new-page.html" class="nav-tab ...">
-        ...
+    <a href="/pages/oprt/oprt-002.html" class="nav-tab ...">
+        <img src="/assets/icons/oprt_002_green.png" 
+             data-inactive-src="/assets/icons/oprt_002_green.png" {/* Points to color icon */}
+             data-active-src="/assets/icons/oprt_002_green.png" {/* Points to color icon */}
+             alt="Step 2" 
+             class="w-12 h-12 ...">
     </a>
     ```
 
--   **To add or remove a step in the navigation:**
-    Simply copy and paste (or delete) an entire `<a>...</a>` block within the `<nav>` tags. The JavaScript will automatically handle the circular logic. Make sure to update the `href` and image paths for any new link.
+-   **To change which page an icon links to:**
+    Update the `href` attribute in the `<a>` tag. **Ensure the filename follows the `[section]-XXX.html` pattern** (e.g., `/pages/oprt/oprt-003.html`).
+
+-   **To add or remove a step in the navigation sequence:**
+    Simply copy and paste (or delete) an entire `<a>...</a>` block within the `<nav>` tags. Update the `href` and image paths (following the chosen styling method) for any new link. The JavaScript will handle the rest automatically.
 
 ---
 
@@ -232,3 +248,34 @@ This website is designed to be navigated partly via external triggers, like plac
 -   The landing pages in the `/pages/vrtl/` folder can also be triggered if you want to show a general intro screen for a machine before the user proceeds to a specific step. For example: `/pages/vrtl/vrtl-001.html`.
 
 Following the consistent naming convention is crucial for these triggers to function reliably.
+
+---
+
+## 7. Configuring the Base Path (Important for Deployment)
+
+The website uses a configuration file (`/js/config.js`) to manage the base URL path, ensuring that links to assets (CSS, JS, images) work correctly in different deployment environments (local server, GitHub Pages, custom server).
+
+**File:** `/js/config.js`
+
+```javascript
+// Define the base path for your website.
+// Examples:
+//   - For GitHub Pages: '/Lebaz-Lernstation/'
+//   - For deploying to the root of your own domain: '/'
+//   - For deploying to a subdirectory 'my-app' on your own domain: '/my-app/'
+
+const BASE_PATH = '/Lebaz-Lernstation/';
+```
+
+**How to Use:**
+
+-   **Local Development (using `python -m http.server`):**
+    * Change `BASE_PATH` to `'/'`.
+    * Access the site at `http://localhost:8000`.
+-   **GitHub Pages Deployment (on `testing` branch):**
+    * Ensure `BASE_PATH` is set to `'/[Your-Repository-Name]/'` (e.g., `'/Lebaz-Lernstation/'`).
+-   **Deploying to Your Own Server:**
+    * If deploying to the **root** of a domain (e.g., `www.yourdomain.com`), set `BASE_PATH` to `'/'`.
+    * If deploying to a **subdirectory** (e.g., `www.yourdomain.com/learn-app/`), set `BASE_PATH` to `'/learn-app/'`.
+
+**Important:** You **only need to edit this one line** in `js/config.js` when changing where the website is hosted. All links within the HTML files should remain relative to the project root (e.g., `assets/css/custom.css`, `js/layout-loader.js`).

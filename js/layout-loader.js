@@ -47,9 +47,12 @@ document.addEventListener("DOMContentLoaded", function() {
  * @param {boolean} isActive - Whether the icon should be in the active state.
  * @param {boolean} useFilter - If true, uses grayscale filter; otherwise, swaps src.
  */
-function applyIconStyle(img, isActive, useFilter) {
+function applyIconStyle(img, isActive) {
     if (!img) return;
-
+    
+    // Read the global config variable (set by config.js)
+    const useFilter = typeof USE_GRAYSCALE_FILTER !== 'undefined' ? USE_GRAYSCALE_FILTER : true; // Default to true if not defined
+    
     // Determine the correct source path based on the method
     let targetSrc = '';
     if (useFilter) {
@@ -81,13 +84,6 @@ function applyIconStyle(img, isActive, useFilter) {
  * Displays a fixed number of icons with the active one centered.
  */
 function setActiveNav() {
-    // ===================================================================
-    // REVERSIBLE STYLING SWITCH:
-    // true = Use CSS grayscale filter.
-    // false = Use your separate gray PNG files.
-    // ===================================================================
-    const useGrayscaleFilter = true; 
-
     // --- Configuration ---
     const visibleIcons = 5; // Must be an odd number
     if (visibleIcons % 2 === 0) {
@@ -144,7 +140,7 @@ function setActiveNav() {
             const img = clone.querySelector('img');
             
             // Apply INACTIVE style to all clones initially using the helper
-            applyIconStyle(img, false, useGrayscaleFilter);
+            applyIconStyle(img, false);
             clone.classList.remove('active'); // Ensure active class is removed from clone
 
             navContainer.appendChild(clone);
@@ -161,7 +157,7 @@ function setActiveNav() {
         const activeImg = activeLinkInDisplay.querySelector('img');
         
         // Apply ACTIVE style using the helper
-        applyIconStyle(activeImg, true, useGrayscaleFilter);
+        applyIconStyle(activeImg, true);
     }
 
     // --- 5. Set viewport width ---
