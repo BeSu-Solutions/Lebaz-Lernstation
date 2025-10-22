@@ -5,31 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="view-transition" content="same-origin">
 
-    <script>
-        fetch('js/config.js')
-            .then(response => response.text())
-            .then(configText => {
-                (new Function(configText))(); 
-                const baseTag = document.createElement('base');
-                baseTag.href = BASE_PATH || '/'; // Use '/' as a fallback
-                document.head.prepend(baseTag);
-            })
-            .catch(err => console.error('Error loading config for base tag:', err));
-    </script>
-
     <title>Virtual Machine - Mechanical Treatment</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Urbanist:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/mystyle.css" />
 
 </head>
 <body class="bg-white">
     <div class="max-w-7xl mx-auto content-wrapper flex flex-col min-h-screen">
 
-        <div id="header-placeholder" data-header-src="pages/oprt/oprt_header.html"></div>
+        <div id="header-placeholder" data-header-src="./oprt_header.html"></div>
 
         <main class="pt-10 flex-1">
             <section class="text-center py-4">
@@ -40,7 +28,7 @@
             </section>
 
             <section class="px-8 md:px-12 relative mb-16 shadow-md z-10">
-                <img src="assets/images/factory.jpg" alt="Industrial machinery" class="w-full h-auto rounded-lg shadow-lg">
+                <img src="../../assets/images/factory.jpg" alt="Industrial machinery" class="w-full h-auto rounded-lg shadow-lg">
                 
                 <button class="hotspot absolute flex items-center justify-center w-10 h-10 bg-[var(--color-primary)] text-white rounded-full text-lg font-bold shadow-md" style="top: 30%; left: 35%;" data-title="Machine Controls" data-text="The two modules of the machine are separately controlled. The main control panel for the pre-module is located in the back of the machine, while an additional panel for the product module is close to the separation processes.">
                     01
@@ -128,7 +116,7 @@
                                     You can control all necessary process parameters of the machine through one of the touch screen interfaces
                                 </p>
                                 <div class="relative max-w-4xl mx-auto cursor-pointer">
-                                    <div class="open-video-modal-trigger relative bg-black rounded-lg shadow-md cursor-pointer group" data-video-src="assets/videos/vrtl/vrtl-mt_2-1-1.mp4">
+                                    <div class="open-video-modal-trigger relative bg-black rounded-lg shadow-md cursor-pointer group" data-video-src="../../assets/videos/vrtl/vrtl-mt_2-1-1.mp4">
                                             <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop" alt="Video Thumbnail" class="w-full h-72 object-cover rounded-lg opacity-80 group-hover:opacity-60 transition-opacity">
                                             <div class="absolute inset-0 flex items-center justify-center">
                                                 <div class="w-16 h-16 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/50 transition-colors">
@@ -172,7 +160,7 @@
                                     The dried materials are put through multiple steps of physical separation based on particle density/shape and particle size. The aim is to achieve a heavy fraction (consisting mainly of iron, copper, aluminum and plastic), a Black Mass fraction (a raw material concentrate consisting of lithium, cobalt, nickel, graphite and manganese), a metal foil fraction (aluminum, copper) and a plastic foil fraction
                                 </p>
                                 <div class="relative max-w-4xl mx-auto cursor-pointer">
-                                    <div class="open-video-modal-trigger relative bg-black rounded-lg shadow-md cursor-pointer group" data-video-src="assets/videos/vrtl/vrtl-mt_2-3-1.mp4">
+                                    <div class="open-video-modal-trigger relative bg-black rounded-lg shadow-md cursor-pointer group" data-video-src="../../assets/videos/vrtl/vrtl-mt_2-3-1.mp4">
                                             <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop" alt="Video Thumbnail" class="w-full h-72 object-cover rounded-lg opacity-80 group-hover:opacity-60 transition-opacity">
                                             <div class="absolute inset-0 flex items-center justify-center">
                                                 <div class="w-16 h-16 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/50 transition-colors">
@@ -192,7 +180,7 @@
             </section>
         </main>
         
-        <div id="footer-placeholder" data-footer-src="pages/_footer.html"></div>
+        <div id="footer-placeholder" data-footer-src="../_footer.html"></div>
 
     </div>
 
@@ -208,11 +196,11 @@
         </div>
     </div>
 
-    <script src="js/layout-loader.js"></script>
-    <script src="js/hotspots.js"></script>
-    <script src="js/videoModal.js"></script>
-    <script src="js/tabs.js"></script>
-    <script src="js/dragToScroll.js"></script>
+    <script src="../../js/layout-loader.js"></script>
+    <script src="../../js/hotspots.js"></script>
+    <script src="../../js/videoModal.js"></script>
+    <script src="../../js/tabs.js"></script>
+    <script src="../../js/dragToScroll.js"></script>
 
 
 </body>

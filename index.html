@@ -3,17 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        fetch('js/config.js')
-            .then(response => response.text())
-            .then(configText => {
-                (new Function(configText))(); 
-                const baseTag = document.createElement('base');
-                baseTag.href = BASE_PATH || '/'; // Use '/' as a fallback
-                document.head.prepend(baseTag);
-            })
-            .catch(err => console.error('Error loading config for base tag:', err));
-    </script>
+
     <title>Die Lernfabrik - Willkommen</title>
 
     <!-- Google Fonts (Urbanist for headings, Inter for body) -->
@@ -25,7 +15,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Your Custom Stylesheet (for fonts, colors, etc.) -->
-    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="./css/mystle.css">
     
     <style>
         /* A little extra style to ensure the spinner is the brand color */
@@ -46,7 +36,7 @@
         <main class="flex-1 flex flex-col items-center justify-center text-center p-8">
 
             <!-- Logo -->
-            <img src="assets/images/Lernfabrik_Logo.png" alt="Die Lernfabrik Logo" class="h-20 w-auto mb-10">
+            <img src="./assets/images/Lernfabrik_Logo.png" alt="Die Lernfabrik Logo" class="h-20 w-auto mb-10">
 
             <!-- Main Headline -->
             <h1 class="text-5xl font-bold text-gray-800">
@@ -59,7 +49,7 @@
             </p>
 
             <!-- Decorative Image -->
-            <div class="my-12 w-full max-w-sm h-64 bg-cover bg-center rounded-lg shadow-xl" style="background-image: url('assets/images/deco_image.png');">
+            <div class="my-12 w-full max-w-sm h-64 bg-cover bg-center rounded-lg shadow-xl" style="background-image: url('./assets/images/deco_image.png');">
             </div>
 
             <!-- Status Indicator (for your auto-triggers) -->
@@ -72,7 +62,7 @@
 
         <!-- Footer -->
         <footer class="w-full py-6 text-center">
-            <img src="assets/images/Lernfabrik_Logo_minimal.png" alt="Die Lernfabrik Logo" class="h-10 w-auto mx-auto">
+            <img src="./assets/images/Lernfabrik_Logo_minimal.png" alt="Die Lernfabrik Logo" class="h-10 w-auto mx-auto">
         </footer>
 
     </div>
