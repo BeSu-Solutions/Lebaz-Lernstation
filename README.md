@@ -2,7 +2,51 @@
 
 Welcome to the documentation for the Virtual Learn Station website. This guide is designed for non-developers and will walk you through how to update text, images, and videos, as well as how to create new pages.
 
-## 1. Understanding the Folder Structure
+## 1. Project Workflow & Branches (GitHub)
+
+This project uses **GitHub** to manage different versions of the website. Understanding the branches is important for knowing where to make changes and how they become live.
+
+-   **`development` Branch:**
+    * This is the main branch for **making changes** and adding new content.
+    * Work done on this branch should be tested locally on your computer.
+    * To test, you can run a simple local web server. Open a terminal or command prompt in the project's main folder and run: `python -m http.server`. Then, open your web browser to `http://localhost:8000`.
+-   **`testing` Branch:**
+    * **Accessing the Testing Site:** The live testing website is available at: [https://besu-solutions.github.io/Lebaz-Lernstation/](https://besu-solutions.github.io/Lebaz-Lernstation/)
+    * **Important:** This link goes to the main landing page (`index.html`). To view specific content pages, you need to add the full path to the URL manually. For example:
+        * `https://besu-solutions.github.io/Lebaz-Lernstation/pages/oprt/oprt-001.html`
+        * `https://besu-solutions.github.io/Lebaz-Lernstation/pages/vrtl/vrtl-001.html`
+    * This branch is connected to **GitHub Pages**. Any changes pushed to this branch will automatically be **deployed** to the live testing website.
+    * **Only push changes here when they are ready for review and testing by others.**
+-   **`production` Branch:**
+    * *(Currently unused)* This branch will eventually hold the final, stable version of the website for the public.
+-   **Experimental Branches:**
+    * You can create **new branches** based on `development` if you want to try out significant changes or experiment without affecting the main development work. Once the experiment is successful, the new branch can be merged back into `development`.
+
+**Basic Workflow:**
+1.  Make all your content edits (text, images, videos, new pages) on the `development` branch.
+2.  Test your changes locally using the Python server method.
+3.  When ready for wider testing, merge the `development` branch into the `testing` branch.
+4.  GitHub Pages will automatically update the testing website within a few minutes.
+
+---
+
+## 2. Getting the Project Code
+
+You can get a copy of the website's code from the GitHub repository in two ways:
+
+-   **Cloning (Recommended for Development):**
+    * Use a Git client (like GitHub Desktop or the command line) to "clone" the repository.
+    * This creates a local copy that is linked to the online repository, allowing you to easily pull updates and push your changes.
+    * This is the best method if you plan to regularly contribute changes.
+-   **Downloading (For Backup or Deployment):**
+    * On the main page of the GitHub repository, click the green "<> Code" button.
+    * Select "Download ZIP".
+    * This downloads a snapshot of the current branch as a ZIP file.
+    * This is useful for creating backups or if you need to deploy the website files to a different web server (not GitHub Pages).
+
+---
+
+## 3. Understanding the Folder Structure
 
 The project is organized into a few key folders. Understanding what each one does will help you find the files you need to edit.
 
@@ -18,11 +62,11 @@ The project is organized into a few key folders. Understanding what each one doe
 
 ---
 
-## 2. How to Edit the Website Content
+## 4. How to Edit the Website Content
 
 The website is built from reusable parts (like the header) and individual pages that use them.
 
-### 2.1. The Landing Page for the Website (`index.html`)
+### 4.1. The Landing Page for the Website (`index.html`)
 
 This acts as the landing page for the website. It's located in the main project folder (the top level). It is not neccesary to show this page to the users, but if you need a generic page to represent the learn station as a whole then this is where you can do that. The design for this has currently been decided. We can discuss it if needed. You can make temporary changes as below.
 
@@ -52,7 +96,7 @@ This acts as the landing page for the website. It's located in the main project 
 
 ---
 
-### 2.2. Landing Pages for virtual machines (e.g., `/pages/vrtl/vrtl-001.html`)
+### 4.2. Landing Pages for virtual machines (e.g., `/pages/vrtl/vrtl-001.html`)
 
 Theser are the placeholder pages for the landing page for the virtual machines. The design is still in discussion and not final yet.
 
@@ -66,7 +110,7 @@ Theser are the placeholder pages for the landing page for the virtual machines. 
 
 ---
 
-### 2.3. The Header & Navigation (`/pages/oprt/oprt_header.html`)
+### 4.3. The Header & Navigation (`/pages/oprt/oprt_header.html`)
 
 This file controls the circular navigation bar for all pages within the `/pages/oprt/` folder.
 
@@ -98,7 +142,7 @@ This file controls the circular navigation bar for all pages within the `/pages/
 
 ---
 
-### 2.4. Main Content Pages (e.g., `/pages/oprt/oprt-mt.html`)
+### 4.4. Main Content Pages (e.g., `/pages/oprt/oprt-mt.html`)
 
 This is the template for your main content pages (the ones with the interactive elements). All pages within a section (like `/oprt/`) will follow this structure.
 
@@ -149,7 +193,7 @@ This is the template for your main content pages (the ones with the interactive 
 
 ---
 
-## 3. How to Create a New Page
+## 5. How to Create a New Page
 
 Creating a new page within an existing section (like "Operations") is straightforward:
 
@@ -178,7 +222,7 @@ Creating a new page within an existing section (like "Operations") is straightfo
 
 ---
 
-## 4. Note on NFC Trigger Integration
+## 6. Note on NFC Trigger Integration
 
 This website is designed to be navigated partly via external triggers, like placing an object with an NFC tag on the station. When configuring these triggers:
 
@@ -188,25 +232,3 @@ This website is designed to be navigated partly via external triggers, like plac
 -   The landing pages in the `/pages/vrtl/` folder can also be triggered if you want to show a general intro screen for a machine before the user proceeds to a specific step. For example: `/pages/vrtl/vrtl-001.html`.
 
 Following the consistent naming convention is crucial for these triggers to function reliably.
-
----
-
-## 5. Project Workflow & Branches (GitHub)
-
-This project uses **GitHub** to manage different versions of the website. Understanding the branches is important for knowing where to make changes and how they become live.
-
--   **`development` Branch:**
-    * This is the main branch for **making changes** and adding new content.
-    * Work done on this branch should be tested locally on your computer.
-    * To test, you can run a simple local web server. Open a terminal or command prompt in the project's main folder and run: `python -m http.server`. Then, open your web browser to `http://localhost:8000`.
--   **`testing` Branch:**
-    * This branch is connected to **GitHub Pages**. Any changes pushed to this branch will automatically be **deployed** to the live testing website.
-    * **Only push changes here when they are ready for review and testing by others.**
--   **`production` Branch:**
-    * *(Currently unused)* This branch will eventually hold the final, stable version of the website for the public.
-
-**Basic Workflow:**
-1.  Make all your content edits (text, images, videos, new pages) on the `development` branch.
-2.  Test your changes locally using the Python server method.
-3.  When ready for wider testing, merge the `development` branch into the `testing` branch.
-4.  GitHub Pages will automatically update the testing website within a few minutes.
