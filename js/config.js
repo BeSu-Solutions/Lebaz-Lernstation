@@ -5,7 +5,7 @@
 //   - For GitHub Pages: '/Lebaz-Lernstation/'
 //   - For deploying to the root of your own domain: '/'
 //   - For deploying to a subdirectory 'my-app' on your own domain: '/my-app/'
-const BASE_PATH = '/Lebaz-Lernstation';
+const BASE_PATH = '/Lebaz-Lernstation/';
 
 // Define the icon styling method for the header navigation.
 // true = Use CSS grayscale filter (only need color icons).

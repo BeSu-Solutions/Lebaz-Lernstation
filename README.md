@@ -85,7 +85,7 @@ This acts as the landing page for the website. It's located in the main project 
     1.  Place your new image in the `/assets/images/` folder.
     2.  In `index.html`, update the `url()` in this line:
     ```html
-    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./assets/images/deco_image.png');"></div>
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/images/deco_image.png');"></div>
     ```
 
 -   **To change the loading status text:**
@@ -121,7 +121,7 @@ Each content section (like `oprt`, `envr`) has its own header file that controls
         2.  Change the line `const USE_GRAYSCALE_FILTER = true;` to `const USE_GRAYSCALE_FILTER = false;`.
 
 -   **To change an icon (using separate gray/green files when `USE_GRAYSCALE_FILTER` is `false`):**
-    1.  Place your new **color** (active) icon and **gray** (inactive) icon PNGs in `/assets/icons/`.
+    1.  Place your new **color** (active) icon and **gray** (inactive) icon PNGs in `assets/icons/`.
     2.  Open the relevant header file (e.g., `oprt_header.html`).
     3.  Find the `<a>` tag for the step you want to change.
     4.  Update the `src` (initially gray), `data-inactive-src` (gray path), `data-active-src` (color path), and `alt` attributes of the `<img>` tag inside it.
